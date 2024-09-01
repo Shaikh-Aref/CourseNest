@@ -1,0 +1,46 @@
+﻿@model CourseDTO
+@{
+    Layout = "_AdminLayout";
+}
+<div style="width:50%">
+    <h2> Add Course </h2>
+    <a asp-action="Index" asp-controller="Course" class="btn btn-primary">Back</a>
+    <form asp-action="AddCourse" enctype="multipart/form-data">
+        @* <input type="hidden" asp-for="Id" /> *@
+
+        <div class="my-2">
+            <label>Course*</label>
+            <input type="text" class="form-control" asp-for="CourseName" />
+            <span asp-validation-for="CourseName" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>Instructor*</label>
+            <input type="text" class="form-control" asp-for="InstructorName" />
+            <span asp-validation-for="InstructorName" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>Category*</label>
+            <select class="form-control" asp-for="CategoryId" asp-items="Model.CategoryList">
+                <option value="">Select Category</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>CourseFee*</label>
+            <input type="number" class="form-control" asp-for="CourseFee" />
+            <span asp-validation-for="CourseFee" class="text-danger"></span>
+        </div>
+
+        <div class="my-2">
+            <label>Image</label>
+            <input type="file" class="form-control" asp-for="ImageFile" />
+        </div>
+
+        <div class="my-2">
+            <button type="submit" class="btn btn-info">Add</button>
+        </div>
+    </form>
+</div>

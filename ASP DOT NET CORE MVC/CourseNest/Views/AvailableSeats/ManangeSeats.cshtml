@@ -1,0 +1,22 @@
+﻿@model SeatsDTO
+@{
+    Layout = "_AdminLayout";
+}
+
+<div style="width:50%">
+<h2> Manage AvailableSeats </h2>
+<a asp-action="Index" asp-controller="AvailableSeats" class="btn btn-primary">Back</a>
+<form asp-action="ManangeSeats">
+   <input type="hidden" asp-for="CourseId" />
+
+   <div class="my-2">
+      <label>SeatCount</label>
+      <input type="number" class="form-control" asp-for="SeatCount" />
+      <span asp-validation-for="SeatCount" class="text-danger"></span>
+   </div>
+
+   <div class="my-2">
+      <button type="submit" class="btn btn-info">Update</button>
+   </div>
+</form>
+</div>

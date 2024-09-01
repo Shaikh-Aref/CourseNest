@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Course>
+@{
+    Layout = "_AdminLayout";
+}
+
+<h2>Courses</h2>
+
+<a asp-action="AddCourse" asp-controller="Course" class="btn btn-primary">Add More</a>
+
+@if(Model?.Count()>0)
+{
+    <table class="table table-striped my-2">
+        <tr>
+            <th>Image</th>
+            <th>Course</th>
+            <th>Instructor</th>
+            <th>Category</th>
+            <th>CourseFee</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>
+                    @if(string.IsNullOrWhiteSpace(course.Image))
+                    {
+                        <img src="/Images/NoImage.png" style="width:80px;height:100px" alt="course image" />
+                    }
+                    else
+                    {
+                        <img src="/images/@course.Image" style="width:80px;height:100px" alt="course image" />
+                    }
+                </td>
+                <td>@course.CourseName</td>
+                <td>@course.InstructorName</td>
+                <td>@course.Category.CategoryName</td>
+                <td>@course.CourseFee</td>
+                <td>
+                    <a asp-action="UpdateCourse" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-success">Edit</a>
+                    <a asp-action="DeleteCourse" asp-controller="Course" asp-route-id="@course.Id" class="btn btn-danger" onclick="return window.confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3>No records</h3>
+}
+

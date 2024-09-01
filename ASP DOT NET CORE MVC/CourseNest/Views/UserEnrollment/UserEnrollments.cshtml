@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Enrollment>
+@{
+}
+<div style="width:100%" class="mt-2">
+    <a href="/Identity/Account/Manage" class="btn btn-primary my-2">Back</a>
+
+    <h4>My Enrollments</h4>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>EnrollmentDate</th>
+                <th>EnrollmentStatus</th>
+            </tr>
+            @foreach (var enrollment in Model)
+            {
+                <tr>
+                    <td>@enrollment.EnrollmentDate.ToString("dd-MM-yyyy")</td>
+                    <td>@enrollment.EnrollmentStatus.EnrollmentStatusName</td>
+                </tr>
+                @if (enrollment.EnrollmentDetail != null && enrollment.EnrollmentDetail.Count > 0)
+                {
+                    <tr>
+                        <td>
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>
+                                        Total:
+                                    </td>
+                                    <td>
+                                        @(enrollment.EnrollmentDetail.Select(item => item.Course.CourseFee * item.SeatCount).Sum())
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Course</th>
+                                    <th>Image</th>
+                                    <th>Category</th>
+                                    <th>Unit CourseFee(INR)</th>
+                                    <th>Total CourseFee</th>
+                                </tr>
+                                @foreach (var item in enrollment.EnrollmentDetail)
+                                {
+                                    <tr>
+                                        <td>@item.Course.CourseName</td>
+                                        <td>
+                                            @if (string.IsNullOrEmpty(item.Course.Image))
+                                            {
+                                                <img src="/images/NoImage.png" style="width:80px;height:100px" />
+                                            }
+                                            else
+                                            {
+                                                <img src="/images/@item.Course.Image" style="width:80px;height:100px" />
+                                            }
+                                        </td>
+                                        <td>@item.Course.Category.CategoryName</td>
+                                        <td>@item.Course.CourseFee X @item.SeatCount</td>
+                                        <td> @(item.Course.CourseFee * item.SeatCount) </td>
+                                    </tr>
+                                }
+                            </table>
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+
+    }
+    else
+    {
+        <h5>No enrollments</h5>
+    }
+</div>
+
+
+
+

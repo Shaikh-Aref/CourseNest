@@ -1,0 +1,25 @@
+﻿@model PaymentViewModel
+
+@{
+    ViewBag.Title = "Payment Page";
+}
+
+<h2>Complete Your Payment</h2>
+
+<form action="/Payment/Complete" method="POST">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"
+            data-key="@Model.Key"
+            data-amount="@Model.Amount"
+            data-currency="INR"
+            data-order_id="@Model.OrderId"
+            data-buttontext="Pay with Razorpay"
+            data-name="Your Business Name"
+            data-description="Purchase Description"
+            data-image="/images/your_logo.png"
+            data-prefill.name="@Model.Name"
+            data-prefill.email="@Model.Email"
+            data-prefill.contact="@Model.Contact"
+            data-theme.color="#F37254">
+    </script>
+    <input type="hidden" name="hidden">
+</form>

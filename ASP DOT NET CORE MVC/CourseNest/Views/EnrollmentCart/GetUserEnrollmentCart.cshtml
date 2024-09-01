@@ -1,0 +1,67 @@
+﻿@model EnrollmentCart
+@{
+    ViewData["Title"] = "GetUserEnrollmentCart";
+}
+
+<div style="width:90%;margin:auto" class="mt-2">
+    @if (Model != null && Model.EnrollmentCartDetails != null && Model.EnrollmentCartDetails.Count > 0)
+    {
+        <h5>My EnrollmentCart</h5>
+
+        <table class="table table-striped">
+            <tr>
+                <th>Course</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Unit CourseFee (INR)</th>
+                <th>Total CourseFee</th>
+                <th>Action</th>
+            </tr>
+            @foreach (var item in Model.EnrollmentCartDetails)
+            {
+                <tr>
+                    <td>@item.Course.CourseName</td>
+                    <td>
+                        @if (string.IsNullOrEmpty(item.Course.Image))
+                        {
+                            <img src="/images/NoImage.png" style="width:80px;height:100px" />
+                        }
+                        else
+                        {
+                            <img src="/images/@item.Course.Image" style="width:80px;height:100px" />
+                        }
+                    </td>
+                    <td>@item.Course.Category.CategoryName</td>
+                    <td>@item.Course.CourseFee X @item.SeatCount</td>
+                    <td>@(item.Course.CourseFee * item.SeatCount)</td>
+                    <td>
+                        @* Increase SeatCount button should be invisible if not enough seats *@
+                        @if (item.SeatCount < item.Course.AvailableSeats.SeatCount)
+                        {
+                            <a class="btn btn-info" href="/EnrollmentCart/AddItem?courseId=@item.CourseId&&redirect=1">+</a>
+                        }
+                        else
+                        {
+                            <span style="border: 1px solid;padding: 8px 8px;color: red;border-radius: 5px;margin-right:4px">Out of seats</span>
+                        }
+                        @* Decrement button *@
+                        <a class="btn btn-info" href="/EnrollmentCart/removeitem?courseid=@item.CourseId">-</a>
+                    </td>
+                </tr>
+            }
+        </table>
+
+        <div class="my-2">
+            <h5>Total (INR): </h5>
+            @{
+                var totalAmount = Model.EnrollmentCartDetails.Select(item => item.Course.CourseFee * item.SeatCount).Sum();
+            }
+            <a class="btn btn-primary" href="/EnrollmentCart/Checkout?totalAmount=@totalAmount">Checkout</a>  <!-- Pass totalAmount here -->
+        </div>
+
+    }
+    else
+    {
+        <h5>EnrollmentCart is empty</h5>
+    }
+</div>

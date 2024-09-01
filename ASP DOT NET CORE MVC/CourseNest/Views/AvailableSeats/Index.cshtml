@@ -1,0 +1,30 @@
+﻿@model IEnumerable<SeatsDisplayModel>
+@{
+    Layout = "_AdminLayout";
+}
+<h2>Seatss</h2>
+
+<form asp-action="Index" method="get" class="my-2 d-flex gap-2">
+    <input type="text" name="sTerm" class="form-control w-25" placeholder="Search by course" />
+    <button type="submit" class="btn btn-primary">Find</button>
+    <a asp-action="Index" asp-controller="AvailableSeats" class="btn btn-primary">Clear</a>
+</form>
+
+<table class="table table-benrollmented">
+  <tr>
+    <th>Course</th>
+    <th>AvailableSeats</th>
+    <th>Actions</th>
+  </tr>
+  @foreach(var item in Model)
+  {
+    <tr>
+      <td>@item.CourseName</td>
+      <td>@item.SeatCount</td>
+      <td>
+         <a asp-action="ManangeSeats" asp-controller="AvailableSeats" asp-route-courseId="@item.CourseId" class="btn btn-info"> Update AvailableSeats</a>
+      </td>
+    </tr>
+  }
+</table>
+

@@ -1,0 +1,36 @@
+﻿@model EnrollmentDetailModalDTO
+
+<div class="modal fade" id="modal-@Model.DivId" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">EnrollmentDetail</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <tr>
+                        <th>Course</th>
+                        <th>Category</th>
+                        <th>CourseFee</th>
+                        <th>Quantiy</th>
+                        <th>TotalPrice</th>
+                    </tr>
+                    @foreach (var item in Model.EnrollmentDetail)
+                    {
+                        <tr>
+                            <td>@item.Course.CourseName</td>
+                            <td>@item.Course.Category.CategoryName</td>
+                            <td>@item.CourseUnitFee</td>
+                            <td>@item.SeatCount</td>
+                            <td>@(item.SeatCount * item.CourseUnitFee)</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

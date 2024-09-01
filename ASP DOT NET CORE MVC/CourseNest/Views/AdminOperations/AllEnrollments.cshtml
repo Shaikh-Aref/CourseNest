@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Enrollment>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "AllEnrollments";
+}
+<div style="width:100%" class="mt-2">
+    <h4> Enrollments</h4>
+    @if (Model != null && Model.Count() > 0)
+    {
+        <table class="table table-striped">
+            <tr>
+                <th>EnrollmentDate</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>MobileNo</th>
+                <th>Address</th>
+                <th>PaymentStatus</th>
+                <th>EnrollmentStatus</th>
+                <th>Actions</th>
+
+            </tr>
+            @foreach (var enrollment in Model)
+            {
+                <tr>
+                    <td>@enrollment.EnrollmentDate.ToString("dd-MM-yyyy")</td>
+                    <td>@enrollment.Name</td>
+                    <td>@enrollment.MobileNumber</td>
+                    <td>@enrollment.Email</td>
+                    <td>@enrollment.Address</td>
+                    <td>@enrollment.PaymentMethod | @(enrollment.IsPaid ? "Paid" : "Not Paid")</td>
+                    <td>@enrollment.EnrollmentStatus.EnrollmentStatusName</td>
+                    <td>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#modal-@enrollment.Id" class="btn btn-primary">
+                            Enrollment-Detail
+                        </button>
+                        <a asp-action="UpdateEnrollmentStatus" asp-route-enrollmentId="@enrollment.Id" class="btn btn-info">Change EnrollmentStatus</a>
+                       
+
+                   @* appending modal div here *@
+                   @* Make sure to put this partial tag inside this td block, otherwise it can cause layout related problem*@
+                   @await Html.PartialAsync("/Views/AdminOperations/_EnrollmentDetailModal.cshtml",new EnrollmentDetailModalDTO{DivId=enrollment.Id.ToString(), EnrollmentDetail=enrollment.EnrollmentDetail})
+                    </td>
+
+                </tr>
+
+            }
+        </table>
+
+    }
+    else
+    {
+        <h5>No enrollments</h5>
+    }
+
+
+</div>
+

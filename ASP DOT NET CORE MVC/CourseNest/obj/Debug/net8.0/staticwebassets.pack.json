@@ -1,0 +1,81 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CourseNest.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CourseNest.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\240340320116.jpeg",
+      "PackagePath": "staticwebassets\\images\\240340320116.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\2eaf9162-1ab7-43e8-b7c3-bc83c29ff2ce.jpeg",
+      "PackagePath": "staticwebassets\\images\\2eaf9162-1ab7-43e8-b7c3-bc83c29ff2ce.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\7dd92791-f422-4fdd-ac13-7ff3b5e02cf4.jpeg",
+      "PackagePath": "staticwebassets\\images\\7dd92791-f422-4fdd-ac13-7ff3b5e02cf4.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\960603e2-e23f-4b43-bd5f-a0f857749aeb.jpeg",
+      "PackagePath": "staticwebassets\\images\\960603e2-e23f-4b43-bd5f-a0f857749aeb.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\NoImage.png",
+      "PackagePath": "staticwebassets\\images\\NoImage.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\WhatsApp Image 2024-07-11 at 10.09.38 AM.jpeg",
+      "PackagePath": "staticwebassets\\images\\WhatsApp Image 2024-07-11 at 10.09.38 AM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\WhatsApp Image 2024-07-11 at 10.11.27 AM.jpeg",
+      "PackagePath": "staticwebassets\\images\\WhatsApp Image 2024-07-11 at 10.11.27 AM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\WhatsApp Image 2024-07-11 at 10.12.32 AM.jpeg",
+      "PackagePath": "staticwebassets\\images\\WhatsApp Image 2024-07-11 at 10.12.32 AM.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\a5b05801-891d-46a9-b058-718af36b7f63.jpeg",
+      "PackagePath": "staticwebassets\\images\\a5b05801-891d-46a9-b058-718af36b7f63.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\de068a7e-fa25-41d1-8f3a-b3cfce365fc5.jpeg",
+      "PackagePath": "staticwebassets\\images\\de068a7e-fa25-41d1-8f3a-b3cfce365fc5.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\ec1af2bf-22dc-4803-b30c-da8229b0c58e.png",
+      "PackagePath": "staticwebassets\\images\\ec1af2bf-22dc-4803-b30c-da8229b0c58e.png"
+    },
+    {
+      "Id": "C:\\Users\\USER\\Desktop\\Projects\\CourseNest\\CourseNest\\wwwroot\\images\\hrishi_formal2_enhanced.jpg",
+      "PackagePath": "staticwebassets\\images\\hrishi_formal2_enhanced.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CourseNest.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CourseNest.props",
+      "PackagePath": "build\\CourseNest.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CourseNest.props",
+      "PackagePath": "buildMultiTargeting\\CourseNest.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CourseNest.props",
+      "PackagePath": "buildTransitive\\CourseNest.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

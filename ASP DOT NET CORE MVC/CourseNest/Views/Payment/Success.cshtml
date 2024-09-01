@@ -1,0 +1,20 @@
+﻿@model PaymentDetailViewModel
+
+@{
+    ViewData["Title"] = "Payment Complete";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Payment Successful!</h4>
+    <p>Thank you for your payment. Your transaction was completed successfully.</p>
+    <hr>
+    <p class="mb-0">Here are the details of your payment:</p>
+    <ul>
+        <li><strong>Payment ID:</strong> @Model.PaymentId</li>
+        <li><strong>Order ID:</strong> @Model.OrderId</li>
+        <li><strong>Amount Paid:</strong> ₹@((Model.Amount / 100).ToString("F2"))</li>
+    </ul>
+    <a class="btn btn-primary" href="@Url.Action("Index", "Home")">Return to Home</a>
+</div>

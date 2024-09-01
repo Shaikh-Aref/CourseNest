@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "";
+}
+<h1>@ViewData["Title"]</h1>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #35424a;
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+
+            header a {
+                color: #ffffff;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-size: 16px;
+            }
+
+            header ul {
+                padding: 0;
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+            }
+
+            header li {
+                display: inline;
+                padding: 0 20px 0 20px;
+            }
+
+        .about-section {
+            padding: 50px 0;
+            background: #ffffff;
+        }
+
+            .about-section h1 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #333;
+            }
+
+            .about-section p {
+                line-height: 1.6;
+                text-align: justify;
+            }
+
+        .team {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            text-align: center;
+            max-width: 250px;
+        }
+
+            .team-member img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+            }
+
+            .team-member h3 {
+                margin-top: 10px;
+                margin-bottom: 5px;
+            }
+
+            .team-member p {
+                font-size: 14px;
+                color: #666;
+            }
+    </style>
+</head>
+<body>
+
+    <div class="about-section">
+        <div class="container">
+            <h1>About Us</h1>
+            <p>Welcome to CourseNest, your go-to solution for seamless and efficient course registration management! Our mission is to simplify the process of enrolling in courses, making it hassle-free for students, administrators, and educational institutions.</p>
+            <p>Our vision is to create an intuitive, efficient, and reliable course registration system that enhances the educational experience for everyone involved. We aim to bridge the gap between technology and education, ensuring that our platform supports academic growth and administrative efficiency.</p>
+            <div class="team">
+                <div class="team-member">
+                    <img src="~/images/WhatsApp Image 2024-07-11 at 10.09.38 AM.jpeg" alt="Team Member 1">
+                    <h>Somesh Dawalbaje</h>
+                    <h>240340320107</h>
+                </div>
+                <div class="team-member">
+                    <img src="~/images/240340320116.jpeg" alt="Team Member 2">
+                    <h>
+                        Uday Narsale
+                    </h>
+                    <h>240340320116 </h>
+                </div>
+                <div class="team-member">
+                    <img src="~/images/hrishi_formal2_enhanced.jpg" alt="Team Member 3">
+                    <h>Hrishikesh Sapkal</h>
+                    <h>240340520036</h>
+                </div>
+                <div class="team-member">
+                    <img src="~/images/WhatsApp Image 2024-07-11 at 10.12.32 AM.jpeg" alt="Team Member 3">
+                    <h>
+                        Aref Shaikh
+                    </h>
+                    <h>240340320018</h>
+                </div>
+                <div class="team-member">
+                    <img src="~/images/WhatsApp Image 2024-07-11 at 10.11.27 AM.jpeg" alt="Team Member 3">
+                    <h>
+                        Akash Kalpande
+                    </h>
+                    <h>240340320006</h>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
